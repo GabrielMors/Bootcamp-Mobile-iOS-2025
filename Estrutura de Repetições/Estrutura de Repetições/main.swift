@@ -47,3 +47,51 @@ for numero in 0...10 {
     print("número: \(numero)")
 }
 
+
+
+//MARK: Coleções
+
+
+
+//MARK: Array
+// É uma lista
+// Trabalha de forma ORDENADA -> a posição dos itens não se altera
+// Index -> Posição de cada item
+
+//                                0         1         2         3        4         5         6
+var diasDaSemana: [String] = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"]
+
+print(diasDaSemana)
+diasDaSemana.remove(at: 2)
+print(diasDaSemana)
+diasDaSemana.append("Quarta")
+print(diasDaSemana)
+diasDaSemana.insert("Quarta", at: 2)
+print(diasDaSemana)
+diasDaSemana.removeAll()
+
+var numeros: [Int] = [1,2,4,5,6,7,8,9,10]
+print(numeros.count)
+print(numeros.endIndex)
+print(numeros.isEmpty)
+numeros.append(11)
+
+
+//MARK: Dicionário
+// É uma lista
+// Não Trabalha de forma ORDENADA
+// Trabalha com chave e valor
+
+var produtos: [Int: String] = [1: "Salgado", 2: "Doces", 3: "Bebidas"]
+
+print(produtos)
+
+var buscarProduto: String = produtos[2] ?? "Produto não encontrado"
+print(buscarProduto)
+
+produtos.removeValue(forKey: 3)
+print(produtos)
+
+
+produtos.updateValue("qualquer coisa", forKey: 2)
+print(produtos)

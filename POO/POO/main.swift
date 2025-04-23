@@ -187,3 +187,72 @@ print("-------------------------")
 meuMac.ano = 2010
 print(meuMac.ano)
 print(lucasMac.ano)
+
+
+
+//MARK: Struct
+// Struct Trabalha com VALUE TYPE
+// Não trabalha com REFERENCIA
+// Struct nao precisa do INT(construtor) de forma explicita
+// struct nao trabalha com Orientação a Objeto
+// Não trabalha com Herança
+// So aceita estar em conformidade com PROTOCOLO
+
+
+struct Sobrado {
+    
+    var quantidadeDePortas: Int
+    var quantidadeDeBanheiros: Int
+    var emConstrucao: Bool
+
+    
+}
+
+var casaGabriel: Sobrado = Sobrado(quantidadeDePortas: 15, quantidadeDeBanheiros: 4, emConstrucao: true)
+var casaRodrigo: Sobrado = Sobrado(quantidadeDePortas: 20, quantidadeDeBanheiros: 8, emConstrucao: false)
+
+
+casaGabriel = casaRodrigo
+print(casaGabriel.emConstrucao)// False
+print(casaRodrigo.emConstrucao)// False
+print(casaRodrigo.quantidadeDeBanheiros)// 8
+
+
+print("-------------------------")
+
+casaRodrigo.quantidadeDeBanheiros = 10
+
+print(casaRodrigo.quantidadeDeBanheiros)// 10
+print(casaGabriel.quantidadeDeBanheiros)// 8
+
+
+struct Student {
+    
+    var name: String
+    var age: Int
+    var isDedicated: Bool
+    
+}
+
+var lais = Student(name: "Lais", age: 25, isDedicated: true)
+
+var sofia = lais
+sofia.name = "Sofia"
+sofia.age = 17
+sofia.isDedicated = false
+
+print(lais.name, lais.age, lais.isDedicated)
+print(sofia.name, sofia.age, sofia.isDedicated)
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -45,7 +45,7 @@ class ViewController: UIViewController {
     }
     
     private func configImage(image: UIImageView) {
-        image.image = UIImage(systemName: "person.circle.fill")
+        image.image = UIImage(named: "user")
         image.clipsToBounds = true
         image.layer.cornerRadius = 20
     }
@@ -72,12 +72,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tappedEditButton(_ sender: Any) {
-        
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true)
     }
     
     @IBAction func tappedAddUserButton(_ sender: UIButton) {
         addUser(image: userImage.image ?? UIImage(named: "user")!, name: nameUserTextField.text ?? "")
         nameUserTextField.text = ""
+        userImage.image = UIImage(named: "user")
     }
     
     private func addUser(image: UIImage, name: String) {
@@ -109,4 +113,20 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return true
     }
     
+}
+
+
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+        
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            userImage.image = image
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+    }
 }

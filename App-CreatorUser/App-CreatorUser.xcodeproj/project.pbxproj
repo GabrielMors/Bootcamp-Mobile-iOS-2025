@@ -223,6 +223,7 @@
 				DEVELOPMENT_TEAM = 9FF32SR2FP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "App-CreatorUser/Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Acessando galeria";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -251,6 +252,7 @@
 				DEVELOPMENT_TEAM = 9FF32SR2FP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "App-CreatorUser/Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Acessando galeria";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

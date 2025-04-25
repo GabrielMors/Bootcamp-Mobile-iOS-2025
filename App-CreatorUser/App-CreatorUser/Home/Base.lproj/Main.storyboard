@@ -27,6 +27,9 @@
                                 <rect key="frame" x="159" y="298" width="75" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="tappedEditButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iMO-pi-DdK"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="USA-r2-IOK">
                                 <rect key="frame" x="20" y="341" width="353" height="40"/>
@@ -37,7 +40,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="54C-Cf-xqV">
-                                <rect key="frame" x="0.0" y="461" width="393" height="323"/>
+                                <rect key="frame" x="0.0" y="461" width="393" height="391"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzp-7o-mWM">
@@ -47,11 +50,15 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="tappedAddUserButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1mS-0N-TiZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="54C-Cf-xqV" secondAttribute="bottom" id="0Vf-k9-BQk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="54C-Cf-xqV" secondAttribute="trailing" id="1i2-on-OUK"/>
                             <constraint firstItem="kzp-7o-mWM" firstAttribute="top" secondItem="USA-r2-IOK" secondAttribute="bottom" constant="20" id="36Y-mb-XGl"/>
                             <constraint firstItem="USA-r2-IOK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4Ru-bB-3dP"/>
@@ -65,7 +72,6 @@
                             <constraint firstItem="l8b-70-zZ5" firstAttribute="top" secondItem="q0w-hu-BLb" secondAttribute="bottom" constant="10" id="XWn-RG-QP5"/>
                             <constraint firstItem="kzp-7o-mWM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="l9U-dL-AeS"/>
                             <constraint firstItem="USA-r2-IOK" firstAttribute="top" secondItem="l8b-70-zZ5" secondAttribute="bottom" constant="8" id="lba-Iw-Tl2"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="54C-Cf-xqV" secondAttribute="bottom" id="wHH-OB-lIB"/>
                         </constraints>
                     </view>
                     <connections>
@@ -78,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.64122137404578" y="4.9295774647887329"/>
+            <point key="canvasLocation" x="135.1145038167939" y="4.9295774647887329"/>
         </scene>
     </scenes>
     <resources>

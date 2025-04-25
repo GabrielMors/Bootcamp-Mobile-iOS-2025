@@ -9,6 +9,12 @@ import UIKit
 
 class UserTableViewCell: UITableViewCell {
 
+    static let identifier: String = String(describing: UserTableViewCell.self)
+    
+    static func nib() -> UINib {
+        return UINib(nibName: identifier, bundle: nil)
+    }
+    
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     

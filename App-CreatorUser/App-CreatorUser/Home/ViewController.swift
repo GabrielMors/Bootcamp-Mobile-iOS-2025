@@ -90,6 +90,48 @@ class ViewController: UIViewController {
         tableView.reloadData()
     }
     
+    func showEditAlert(for indexPath: IndexPath) {
+        let alert = UIAlertController(title: "Editar Nome", message: "Digite o novo nome do usuário", preferredStyle: .alert)
+        
+        alert.addTextField { textField in
+            textField.text = self.userList[indexPath.row].name // Preencher o textField com o nome Atual
+        }
+        
+        let saveAction = UIAlertAction(title: "Salvar", style: .default) { _ in
+            if let newName = alert.textFields?.first?.text, !newName.isEmpty {
+                // Atualizar o nome do usuário
+                self.userList[indexPath.row].name = newName
+                self.tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+        
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true)
+    }
+    
+    func shareUser(at indexPath: IndexPath) {
+        let user = userList[indexPath.row] // Selecionando o Usuário a partir da linha
+        
+        let itemsToShare: [Any] = [user.name, user.image] // item que irão ser compartilhados
+        
+//        Aqui você poderia passar ações personalizadas.
+        let activityController = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+        // selecionando os itens para compartilhar e quais ações irão fazer
+
+     
+        // Para iPad, evitar crash ao abrir
+        if let popoverController = activityController.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = tableView.rectForRow(at: indexPath)
+        }
+        
+        present(activityController, animated: true)// Mostra uma modal
+    }
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -111,6 +153,38 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        //MARK: Deletar
+        let deleteAction = UIContextualAction(style: .destructive, title: "Deletar") { _, _, completionHander in
+            self.userList.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            completionHander(true)
+        }
+//        Configuração do botão
+        deleteAction.backgroundColor = .red
+        
+        //MARK: Editar
+        let editAction = UIContextualAction(style: .destructive, title: "Editar") { _, _, completionHander in
+//            Ação
+            self.showEditAlert(for: indexPath)
+            completionHander(true)
+        }
+        editAction.backgroundColor = .blue
+        
+        //MARK: Compartilhar
+        let shareAction = UIContextualAction(style: .destructive, title: "Compartilhar") { _, _, completionHander in
+            self.shareUser(at: indexPath)
+            completionHander(true)
+        }
+        shareAction.backgroundColor = .orange
+        
+//         Quais botões irão ser apresentados
+        let swipeAction = UISwipeActionsConfiguration(actions: [deleteAction, editAction, shareAction])
+        
+        return swipeAction
     }
     
 }

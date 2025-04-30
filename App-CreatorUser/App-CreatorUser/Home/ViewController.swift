@@ -56,6 +56,8 @@ class ViewController: UIViewController {
         button.clipsToBounds = true
         button.layer.cornerRadius = 15
         button.titleLabel?.font = UIFont(name: "Arial", size: 17)
+        
+        addUserButton.isEnabled = false
     }
     
     private func configTextField(textField: UITextField) {
@@ -63,6 +65,7 @@ class ViewController: UIViewController {
         textField.clipsToBounds = true
         textField.layer.cornerRadius = 15
         textField.backgroundColor = .systemBackground
+        textField.delegate = self
     }
     
     private func configTableView() {
@@ -132,6 +135,10 @@ class ViewController: UIViewController {
         present(activityController, animated: true)// Mostra uma modal
     }
     
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -189,7 +196,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -203,4 +209,52 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true)
     }
+}
+
+
+extension ViewController: UITextFieldDelegate {
+    
+    // Esse método é disparado quando o teclado sobe
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 2
+        
+        if textField == nameUserTextField {
+            textField.layer.borderColor = UIColor.blue.cgColor
+        } else {
+            textField.layer.borderColor = UIColor.purple.cgColor
+        }
+        
+        print(#function)
+    }
+    
+    // Esse método é disparado quando o teclado abaixa/some
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 2
+        
+        if nameUserTextField.hasText {
+            addUserButton.isEnabled = true
+        } else {
+            addUserButton.isEnabled = false
+            textField.layer.borderColor = UIColor.red.cgColor
+        }
+        
+        print(#function)
+    }
+    
+    // Esse método é disparado quando eu clico no botão RETURN
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print(#function)
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    // Esse método é disparado assim que é feito qualquer alteração de texto no textField.
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if let text = textField.text as? NSString {
+            let newText = text.replacingCharacters(in: range, with: string)
+            print(newText)
+        }
+           return true
+    }
+    
 }

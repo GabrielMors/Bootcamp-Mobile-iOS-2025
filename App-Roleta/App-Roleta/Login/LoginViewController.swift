@@ -24,9 +24,14 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
+        screen?.delegate(delegate: self)
     }
-
-    
-
 }
 
+extension LoginViewController: LoginScreenProtocol {
+    
+    func tappedLoginButton() {
+        navigationController?.pushViewController(RegisterViewController(), animated: true)
+    }
+    
+}

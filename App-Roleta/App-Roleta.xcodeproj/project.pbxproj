@@ -13,6 +13,8 @@
 		C442DAFA2DCC12990072A152 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C442DAEE2DCC12990072A152 /* Assets.xcassets */; };
 		C442DAFC2DCC12990072A152 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C442DAF12DCC12990072A152 /* LaunchScreen.storyboard */; };
 		C442DB022DCC17A90072A152 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C442DB012DCC17A90072A152 /* LoginScreen.swift */; };
+		C442DB062DCEC0FF0072A152 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C442DB052DCEC0FF0072A152 /* RegisterViewController.swift */; };
+		C442DB082DCEC1100072A152 /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C442DB072DCEC1100072A152 /* RegisterScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		C442DAF42DCC12990072A152 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C442DAF52DCC12990072A152 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C442DB012DCC17A90072A152 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		C442DB052DCEC0FF0072A152 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		C442DB072DCEC1100072A152 /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		C442DAF62DCC12990072A152 /* App-Roleta */ = {
 			isa = PBXGroup;
 			children = (
+				C442DB032DCEC0E10072A152 /* Register */,
 				C442DAFF2DCC17720072A152 /* Login */,
 				C442DAFE2DCC17630072A152 /* Resources */,
 				C442DAEF2DCC12990072A152 /* Info.plist */,
@@ -87,6 +92,23 @@
 			isa = PBXGroup;
 			children = (
 				C442DB012DCC17A90072A152 /* LoginScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		C442DB032DCEC0E10072A152 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				C442DB042DCEC0E70072A152 /* Screen */,
+				C442DB052DCEC0FF0072A152 /* RegisterViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		C442DB042DCEC0E70072A152 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				C442DB072DCEC1100072A152 /* RegisterScreen.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -164,7 +186,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C442DB082DCEC1100072A152 /* RegisterScreen.swift in Sources */,
 				C442DAF72DCC12990072A152 /* AppDelegate.swift in Sources */,
+				C442DB062DCEC0FF0072A152 /* RegisterViewController.swift in Sources */,
 				C442DB022DCC17A90072A152 /* LoginScreen.swift in Sources */,
 				C442DAF82DCC12990072A152 /* SceneDelegate.swift in Sources */,
 				C442DAF92DCC12990072A152 /* LoginViewController.swift in Sources */,

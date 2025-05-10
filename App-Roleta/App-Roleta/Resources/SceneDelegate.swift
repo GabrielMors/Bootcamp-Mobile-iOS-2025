@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let viewController: LoginViewController = LoginViewController() // Dando vida para minha primeira TELA
         let nav = UINavigationController(rootViewController: viewController) // Criando a navigationController
         window.rootViewController = nav // Referenciando quem vai ser a tela ROOT da window
-        window.makeKeyAndVisible() // Torando a chave da window visivel
+        window.makeKeyAndVisible() // Torando a chave da window visível
         self.window = window // REFERENCIADO
     }
 

@@ -15,6 +15,11 @@
 		C442DB022DCC17A90072A152 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C442DB012DCC17A90072A152 /* LoginScreen.swift */; };
 		C442DB062DCEC0FF0072A152 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C442DB052DCEC0FF0072A152 /* RegisterViewController.swift */; };
 		C442DB082DCEC1100072A152 /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C442DB072DCEC1100072A152 /* RegisterScreen.swift */; };
+		C47654802DD54DAE0047C729 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C476547F2DD54DAE0047C729 /* HomeViewController.swift */; };
+		C47654822DD54DBE0047C729 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47654812DD54DBE0047C729 /* HomeScreen.swift */; };
+		C47654852DD55DDF0047C729 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47654842DD55DDF0047C729 /* Alert.swift */; };
+		C47654882DD560D60047C729 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47654872DD560D60047C729 /* PersonTableViewCell.swift */; };
+		C476548B2DD564A70047C729 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C476548A2DD564A70047C729 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		C442DB012DCC17A90072A152 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		C442DB052DCEC0FF0072A152 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C442DB072DCEC1100072A152 /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
+		C476547F2DD54DAE0047C729 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C47654812DD54DBE0047C729 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		C47654842DD55DDF0047C729 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		C47654872DD560D60047C729 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
+		C476548A2DD564A70047C729 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,9 @@
 		C442DAF62DCC12990072A152 /* App-Roleta */ = {
 			isa = PBXGroup;
 			children = (
+				C47654892DD5649A0047C729 /* Model */,
+				C47654832DD55DCA0047C729 /* Utils */,
+				C49195D62DD2AF590040576A /* Home */,
 				C442DB032DCEC0E10072A152 /* Register */,
 				C442DAFF2DCC17720072A152 /* Login */,
 				C442DAFE2DCC17630072A152 /* Resources */,
@@ -111,6 +124,48 @@
 				C442DB072DCEC1100072A152 /* RegisterScreen.swift */,
 			);
 			path = Screen;
+			sourceTree = "<group>";
+		};
+		C476547E2DD54D9B0047C729 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				C47654812DD54DBE0047C729 /* HomeScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		C47654832DD55DCA0047C729 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C47654842DD55DDF0047C729 /* Alert.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C47654862DD560960047C729 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C47654872DD560D60047C729 /* PersonTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C47654892DD5649A0047C729 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C476548A2DD564A70047C729 /* Person.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C49195D62DD2AF590040576A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C47654862DD560960047C729 /* Cell */,
+				C476547E2DD54D9B0047C729 /* Screen */,
+				C476547F2DD54DAE0047C729 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,11 +241,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C47654852DD55DDF0047C729 /* Alert.swift in Sources */,
 				C442DB082DCEC1100072A152 /* RegisterScreen.swift in Sources */,
 				C442DAF72DCC12990072A152 /* AppDelegate.swift in Sources */,
 				C442DB062DCEC0FF0072A152 /* RegisterViewController.swift in Sources */,
+				C476548B2DD564A70047C729 /* Person.swift in Sources */,
 				C442DB022DCC17A90072A152 /* LoginScreen.swift in Sources */,
+				C47654822DD54DBE0047C729 /* HomeScreen.swift in Sources */,
 				C442DAF82DCC12990072A152 /* SceneDelegate.swift in Sources */,
+				C47654802DD54DAE0047C729 /* HomeViewController.swift in Sources */,
+				C47654882DD560D60047C729 /* PersonTableViewCell.swift in Sources */,
 				C442DAF92DCC12990072A152 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

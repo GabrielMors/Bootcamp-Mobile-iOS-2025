@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyAAgJ_87EnJ4-68x8FyHzonqxZajfd0rDI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1010679288845</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>GabrielMors.App-Roleta</string>
+	<key>PROJECT_ID</key>
+	<string>app-roleta-turma2025</string>
+	<key>STORAGE_BUCKET</key>
+	<string>app-roleta-turma2025.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1010679288845:ios:302a91ebfaff51773ff144</string>
+</dict>
+</plist>

@@ -60,6 +60,7 @@ class HomeScreen: UIView {
         tableView.backgroundColor = .black
         tableView.separatorStyle = .none
         tableView.register(PersonTableViewCell.self, forCellReuseIdentifier: PersonTableViewCell.identifier)
+        tableView.register(EmptyTableViewCell.self, forCellReuseIdentifier: EmptyTableViewCell.identifier)
         return tableView
     }()
     
@@ -79,6 +80,10 @@ class HomeScreen: UIView {
     public func configTableView(delegate: UITableViewDelegate, dataSources: UITableViewDataSource) {
         tableView.delegate = delegate
         tableView.dataSource = dataSources
+    }
+
+    public func textFieldDelegate(delegate: UITextFieldDelegate) {
+        nameTextField.delegate = delegate
     }
     
     required init?(coder: NSCoder) {

@@ -48,6 +48,11 @@ class PersonTableViewCell: UITableViewCell {
         addSubview(cardsImageView)
     }
     
+    public func setupCell(data: Person) {
+        nameLabel.text = data.name
+        personImageView.image = UIImage(named: data.image)
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

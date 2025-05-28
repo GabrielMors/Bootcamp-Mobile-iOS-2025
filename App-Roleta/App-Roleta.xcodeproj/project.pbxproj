@@ -31,6 +31,7 @@
 		C47654852DD55DDF0047C729 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47654842DD55DDF0047C729 /* Alert.swift */; };
 		C47654882DD560D60047C729 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47654872DD560D60047C729 /* PersonTableViewCell.swift */; };
 		C476548B2DD564A70047C729 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C476548A2DD564A70047C729 /* Person.swift */; };
+		C49106B62DE5274500A13B11 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49106B52DE5274500A13B11 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		C47654842DD55DDF0047C729 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		C47654872DD560D60047C729 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		C476548A2DD564A70047C729 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		C49106B52DE5274500A13B11 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,10 +193,19 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		C49106B42DE5272C00A13B11 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C49106B52DE5274500A13B11 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		C49195D62DD2AF590040576A /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				C47654862DD560960047C729 /* Cell */,
+				C49106B42DE5272C00A13B11 /* ViewModel */,
 				C476547E2DD54D9B0047C729 /* Screen */,
 				C476547F2DD54DAE0047C729 /* HomeViewController.swift */,
 			);
@@ -295,6 +306,7 @@
 				C45B87CD2DDFDCA1007F3727 /* EmptyTableViewCell.swift in Sources */,
 				C442DB022DCC17A90072A152 /* LoginScreen.swift in Sources */,
 				C47654822DD54DBE0047C729 /* HomeScreen.swift in Sources */,
+				C49106B62DE5274500A13B11 /* HomeViewModel.swift in Sources */,
 				C442DAF82DCC12990072A152 /* SceneDelegate.swift in Sources */,
 				C47654802DD54DAE0047C729 /* HomeViewController.swift in Sources */,
 				C47654882DD560D60047C729 /* PersonTableViewCell.swift in Sources */,

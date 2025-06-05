@@ -13,8 +13,14 @@
 		C49106E52DE7C3E000A13B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C49106D92DE7C3E000A13B11 /* Assets.xcassets */; };
 		C49106E72DE7C3E000A13B11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C49106DC2DE7C3E000A13B11 /* LaunchScreen.storyboard */; };
 		C49106ED2DE7C50400A13B11 /* ChatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49106EC2DE7C50400A13B11 /* ChatScreen.swift */; };
-		C49106F02DE7C73F00A13B11 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49106EF2DE7C73F00A13B11 /* UIFont+Extension.swift */; };
-		C49106F22DE7C83C00A13B11 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49106F12DE7C83700A13B11 /* UIColor.swift */; };
+		C49F0EF72DF0FD100077DE93 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F0EF42DF0FD100077DE93 /* UIColor.swift */; };
+		C49F0EF82DF0FD100077DE93 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F0EF52DF0FD100077DE93 /* UIFont+Extension.swift */; };
+		C49F0EFA2DF0FD410077DE93 /* IncomingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F0EF92DF0FD410077DE93 /* IncomingTableViewCell.swift */; };
+		C49F0EFC2DF103280077DE93 /* OutGoingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F0EFB2DF103280077DE93 /* OutGoingTableViewCell.swift */; };
+		C49F0F002DF103A90077DE93 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F0EFF2DF103A90077DE93 /* ChatViewModel.swift */; };
+		C49F0F022DF103B10077DE93 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F0F012DF103AF0077DE93 /* Message.swift */; };
+		C49F0F042DF10A210077DE93 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F0F032DF10A150077DE93 /* String+Extension.swift */; };
+		C49F0F092DF10B8E0077DE93 /* send.wav in Resources */ = {isa = PBXBuildFile; fileRef = C49F0F072DF10B8E0077DE93 /* send.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +32,14 @@
 		C49106DF2DE7C3E000A13B11 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C49106E02DE7C3E000A13B11 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		C49106EC2DE7C50400A13B11 /* ChatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreen.swift; sourceTree = "<group>"; };
-		C49106EF2DE7C73F00A13B11 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
-		C49106F12DE7C83700A13B11 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		C49F0EF42DF0FD100077DE93 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		C49F0EF52DF0FD100077DE93 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		C49F0EF92DF0FD410077DE93 /* IncomingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingTableViewCell.swift; sourceTree = "<group>"; };
+		C49F0EFB2DF103280077DE93 /* OutGoingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutGoingTableViewCell.swift; sourceTree = "<group>"; };
+		C49F0EFF2DF103A90077DE93 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		C49F0F012DF103AF0077DE93 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		C49F0F032DF10A150077DE93 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		C49F0F072DF10B8E0077DE93 /* send.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = send.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +72,8 @@
 		C49106E12DE7C3E000A13B11 /* ChatGPT */ = {
 			isa = PBXGroup;
 			children = (
-				C49106EE2DE7C71700A13B11 /* Extension */,
+				C49F0F052DF10B710077DE93 /* Utils */,
+				C49F0EFE2DF103940077DE93 /* Model */,
 				C49106EA2DE7C4B600A13B11 /* Chat */,
 				C49106E92DE7C3E300A13B11 /* Resources */,
 				C49106DA2DE7C3E000A13B11 /* Info.plist */,
@@ -71,9 +84,9 @@
 		C49106E92DE7C3E300A13B11 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C49106D82DE7C3E000A13B11 /* AppDelegate.swift */,
 				C49106D92DE7C3E000A13B11 /* Assets.xcassets */,
 				C49106DC2DE7C3E000A13B11 /* LaunchScreen.storyboard */,
+				C49106D82DE7C3E000A13B11 /* AppDelegate.swift */,
 				C49106DF2DE7C3E000A13B11 /* SceneDelegate.swift */,
 			);
 			path = Resources;
@@ -82,8 +95,10 @@
 		C49106EA2DE7C4B600A13B11 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				C49F0EEE2DF0FBC70077DE93 /* Cell */,
 				C49106EB2DE7C4EB00A13B11 /* Screen */,
 				C49106E02DE7C3E000A13B11 /* ChatViewController.swift */,
+				C49F0EFD2DF1038C0077DE93 /* ViewModel */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -96,13 +111,56 @@
 			path = Screen;
 			sourceTree = "<group>";
 		};
-		C49106EE2DE7C71700A13B11 /* Extension */ = {
+		C49F0EEE2DF0FBC70077DE93 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				C49106F12DE7C83700A13B11 /* UIColor.swift */,
-				C49106EF2DE7C73F00A13B11 /* UIFont+Extension.swift */,
+				C49F0EF92DF0FD410077DE93 /* IncomingTableViewCell.swift */,
+				C49F0EFB2DF103280077DE93 /* OutGoingTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C49F0EF62DF0FD100077DE93 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C49F0F032DF10A150077DE93 /* String+Extension.swift */,
+				C49F0EF42DF0FD100077DE93 /* UIColor.swift */,
+				C49F0EF52DF0FD100077DE93 /* UIFont+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		C49F0EFD2DF1038C0077DE93 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C49F0EFF2DF103A90077DE93 /* ChatViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C49F0EFE2DF103940077DE93 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C49F0F012DF103AF0077DE93 /* Message.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C49F0F052DF10B710077DE93 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C49F0F082DF10B8E0077DE93 /* Sound  */,
+				C49F0EF62DF0FD100077DE93 /* Extension */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C49F0F082DF10B8E0077DE93 /* Sound  */ = {
+			isa = PBXGroup;
+			children = (
+				C49F0F072DF10B8E0077DE93 /* send.wav */,
+			);
+			path = "Sound ";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C49F0F092DF10B8E0077DE93 /* send.wav in Resources */,
 				C49106E52DE7C3E000A13B11 /* Assets.xcassets in Resources */,
 				C49106E72DE7C3E000A13B11 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -179,10 +238,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C49106E22DE7C3E000A13B11 /* AppDelegate.swift in Sources */,
-				C49106F22DE7C83C00A13B11 /* UIColor.swift in Sources */,
+				C49F0F042DF10A210077DE93 /* String+Extension.swift in Sources */,
+				C49F0EFA2DF0FD410077DE93 /* IncomingTableViewCell.swift in Sources */,
 				C49106E32DE7C3E000A13B11 /* SceneDelegate.swift in Sources */,
+				C49F0EF72DF0FD100077DE93 /* UIColor.swift in Sources */,
+				C49F0EF82DF0FD100077DE93 /* UIFont+Extension.swift in Sources */,
+				C49F0EFC2DF103280077DE93 /* OutGoingTableViewCell.swift in Sources */,
 				C49106E42DE7C3E000A13B11 /* ChatViewController.swift in Sources */,
-				C49106F02DE7C73F00A13B11 /* UIFont+Extension.swift in Sources */,
+				C49F0F022DF103B10077DE93 /* Message.swift in Sources */,
+				C49F0F002DF103A90077DE93 /* ChatViewModel.swift in Sources */,
 				C49106ED2DE7C50400A13B11 /* ChatScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

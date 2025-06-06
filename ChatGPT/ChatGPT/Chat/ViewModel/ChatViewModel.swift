@@ -19,6 +19,10 @@ class ChatViewModel {
         return messageList[index.row]
     }
     
+    public func addMessage(message: String, type: TypeMessage = .user) {
+        messageList.insert(Message(message: message.trimmingCharacters(in: .whitespacesAndNewlines), typeMessage: type), at: .zero)
+    }
+    
     public func heightForRow(index: IndexPath) -> CGFloat {
         let message = loadCurrentMessage(index)
         let font = UIFont.helveticaNeueMedium(size: 16)

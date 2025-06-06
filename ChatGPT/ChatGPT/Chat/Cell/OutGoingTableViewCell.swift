@@ -14,7 +14,7 @@ class OutGoingTableViewCell: UITableViewCell {
     lazy var messageView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .background
+        view.backgroundColor = .outgoingColor
         view.layer.cornerRadius = 20
         view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner]
         return view
@@ -36,6 +36,7 @@ class OutGoingTableViewCell: UITableViewCell {
  
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        transform = CGAffineTransform(scaleX: 1, y: -1)
         selectionStyle = .none
         backgroundColor = .background
         addSubviews()
@@ -59,12 +60,12 @@ class OutGoingTableViewCell: UITableViewCell {
     private func configureConstraints() {
         NSLayoutConstraint.activate([
             
-            messageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            messageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             messageView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             messageView.widthAnchor.constraint(lessThanOrEqualToConstant: 250),
             
             messageLabel.leadingAnchor.constraint(equalTo: messageView.leadingAnchor, constant: 15),
-            messageLabel.trailingAnchor.constraint(equalTo: messageView.leadingAnchor, constant: -15),
+            messageLabel.trailingAnchor.constraint(equalTo: messageView.trailingAnchor, constant: -15),
             messageLabel.topAnchor.constraint(equalTo: messageView.topAnchor, constant: 15),
             messageLabel.bottomAnchor.constraint(equalTo: messageView.bottomAnchor, constant: -15)
             

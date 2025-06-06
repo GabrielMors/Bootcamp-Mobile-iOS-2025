@@ -21,9 +21,20 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .background
         screen?.configureTableView(delegate: self, dataSource: self)
+        screen?.delegate(delegate: self)
     }
 
+    private func reloadTableView() {
+        screen?.tableView.reloadData()
+        vibrate()
+    }
 
+    
+    private func vibrate() {
+        let genetator = UIImpactFeedbackGenerator(style: .medium)
+        genetator.prepare()
+        genetator.impactOccurred()
+    }
 }
 
 extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
@@ -65,4 +76,12 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
         return viewModel.heightForRow(index: indexPath)
     }
     
+}
+
+extension ChatViewController: ChatScreenProtocol {
+    
+    func didSendMessage(_ message: String) {
+        viewModel.addMessage(message: message, type: .user)
+        reloadTableView()
+    }
 }

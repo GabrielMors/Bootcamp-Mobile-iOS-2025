@@ -14,17 +14,19 @@ protocol ChatScreenProtocol: AnyObject {
 
 class ChatScreen: UIView {
     
-    weak var delegate: ChatScreenProtocol?
+    private weak var delegate: ChatScreenProtocol?
     
     private var play: AVAudioPlayer?
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.backgroundColor = .blue
+        tableView.backgroundColor = .background
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .none
-        #warning("Registrar células de chat")
+        tableView.register(OutGoingTableViewCell.self, forCellReuseIdentifier: OutGoingTableViewCell.identifier)
+        tableView.register(IncomingTableViewCell.self, forCellReuseIdentifier: IncomingTableViewCell.identifier)
+        tableView.transform = CGAffineTransform(scaleX: 1, y: -1)
         return tableView
     }()
     
@@ -62,7 +64,7 @@ class ChatScreen: UIView {
         button.backgroundColor = .buttonColor
         button.clipsToBounds = true
         button.layer.cornerRadius = 22
-        button.isEnabled = false
+        button.isEnabled = true
         button.addTarget(self, action: #selector(tappedSendButton), for: .touchUpInside)
         return button
     }()
@@ -70,7 +72,11 @@ class ChatScreen: UIView {
     @objc private func tappedSendButton() {
         playSound()
         delegate?.didSendMessage(inputMessageTextField.text ?? "Aqui quando op texto for nil")
-        
+        pushMessage()
+    }
+    
+    public func delegate(delegate: ChatScreenProtocol) {
+        self.delegate = delegate
     }
     
     public func configureTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
@@ -106,6 +112,10 @@ class ChatScreen: UIView {
         
 //        O try é tipo um aviso para o compilador dizendo:
 //        “Eu sei que isso pode dar erro, e estou preparado pra lidar com isso.”
+    }
+    
+    private func pushMessage() {
+        inputMessageTextField.text = ""
     }
     
     private func addSubViews() {

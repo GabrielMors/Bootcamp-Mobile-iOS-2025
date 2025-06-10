@@ -196,7 +196,6 @@ let jsonStringAnimal = """
     "habitat_type": "Floresta",
     "is_dangerous": true
 }    
-    
 """
 
 
@@ -250,7 +249,7 @@ do {
 
 //MARK: Desafio
 
-//MARK: - Faça um decodable desse JSON.
+//MARK: 1 - Faça um decodable desse JSON.
 
 let jsonStringAuthor = """
 {
@@ -259,6 +258,23 @@ let jsonStringAuthor = """
     "releaseYear": 2010
 }
 """
+
+struct Author: Decodable {
+    var title: String
+    var director: String
+    var releaseYear: Int
+}
+
+if let jsonData = jsonStringAuthor.data(using: .utf8) {
+    do {
+        let author = try JSONDecoder().decode(Author.self, from: jsonData)
+        print("Author decodificado com sucesso")
+        print(author)
+    } catch {
+        print("Erro ao decodificar o JSON: \(error.localizedDescription)")
+    }
+}
+
 
 
 //MARK: 2- Faça o Encodable desse modelo
@@ -273,11 +289,29 @@ struct Student: Encodable {
 
 let gabriel = Student(name: "Gabriel Mors", age: 22, grades: [10, 11, 12])
 
+
+do {
+    let encoder = JSONEncoder()
+    encoder.outputFormatting = .prettyPrinted// Facilitar a leitura
+    let jsonData = try encoder.encode(gabriel)
+    print(jsonData)
+    if let jsonString = String(data: jsonData, encoding: .utf8) {
+        print(jsonString)
+    }
+} catch {
+    print("Error ao decodificar o JSON: \(error.localizedDescription)")
+}
+
 //MARK: 3 - Faça o Decode funcionar
 
 // OBS: Você recebeu um JSON de uma API que contém detalhes sobre um veículo. O JSON tem 10 campos, mas você precisa extrair e usar apenas 4 deles: model, make, year, e color. Durante a decodificação, você encontrará alguns erros intencionais que precisam ser corrigidos.
 
-
+struct Vehicle: Decodable {
+    var model: String
+    var make: String
+    var year: String
+    var color: String
+}
 
 let jsonStringVehicle = """
 {
@@ -294,10 +328,30 @@ let jsonStringVehicle = """
 }
 """
 
+if let jsonVehicle = jsonStringVehicle.data(using: .utf8) {
+    do {
+        let decoder = JSONDecoder()
+        let vehicle = try decoder.decode(Vehicle.self, from: jsonVehicle)
+        print(vehicle)
+    } catch {
+        print("Erro ao decodificar o Vehicle \(error)")
+    }
+}
+
 
 //MARK: - Exercício 4
 
 // Realize o decodable do seguinte json
+
+struct MovieData: Codable {
+    var movie: [Movie]
+}
+
+struct Movie: Codable {
+    var title: String?
+    var year: String
+    var genre: String
+}
 
 let jsonStringMovie = """
 {
@@ -308,6 +362,15 @@ let jsonStringMovie = """
 }
 """
 
+if let jsonData = jsonStringMovie.data(using: .utf8) {
+    do {
+        let movie = try JSONDecoder().decode(MovieData.self, from: jsonData)
+        print("Movie Decodificado com sucesso")
+        print(movie.movie)
+    } catch {
+        print("Erro ao decodificar o Vehicle \(error)")
+    }
+}
 
 //MARK: - Exercício 5
 

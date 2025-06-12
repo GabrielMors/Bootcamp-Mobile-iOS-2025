@@ -22,10 +22,16 @@ class ChatViewController: UIViewController {
         view.backgroundColor = .background
         screen?.configureTableView(delegate: self, dataSource: self)
         screen?.delegate(delegate: self)
+        viewModel.setDelegate(self)
+        
+        
     }
-
+    
     private func reloadTableView() {
-        screen?.tableView.reloadData()
+        
+        DispatchQueue.main.async {
+            self.screen?.tableView.reloadData()
+        }
         vibrate()
     }
 
@@ -82,6 +88,18 @@ extension ChatViewController: ChatScreenProtocol {
     
     func didSendMessage(_ message: String) {
         viewModel.addMessage(message: message, type: .user)
+        reloadTableView()
+        viewModel.fetchMessage(from: message)
+        screen?.inputMessageTextField.text = ""
+    }
+}
+
+extension ChatViewController: ChatViewModelProtocol {
+    func success() {
+        reloadTableView()
+    }
+    
+    func error(message: String) {
         reloadTableView()
     }
 }

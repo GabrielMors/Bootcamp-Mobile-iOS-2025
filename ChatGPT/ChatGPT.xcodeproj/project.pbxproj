@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C40457862DFA415900970945 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40457852DFA415300970945 /* APIKeys.swift */; };
 		C49106E22DE7C3E000A13B11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49106D82DE7C3E000A13B11 /* AppDelegate.swift */; };
 		C49106E32DE7C3E000A13B11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49106DF2DE7C3E000A13B11 /* SceneDelegate.swift */; };
 		C49106E42DE7C3E000A13B11 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49106E02DE7C3E000A13B11 /* ChatViewController.swift */; };
@@ -21,9 +22,11 @@
 		C49F0F022DF103B10077DE93 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F0F012DF103AF0077DE93 /* Message.swift */; };
 		C49F0F042DF10A210077DE93 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49F0F032DF10A150077DE93 /* String+Extension.swift */; };
 		C49F0F092DF10B8E0077DE93 /* send.wav in Resources */ = {isa = PBXBuildFile; fileRef = C49F0F072DF10B8E0077DE93 /* send.wav */; };
+		C4A8EB262DFB947600BBD57A /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A8EB252DFB947600BBD57A /* ChatService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C40457852DFA415300970945 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		C49106C02DE7C2C600A13B11 /* ChatGPT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatGPT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C49106D82DE7C3E000A13B11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C49106D92DE7C3E000A13B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 		C49F0F012DF103AF0077DE93 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		C49F0F032DF10A150077DE93 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		C49F0F072DF10B8E0077DE93 /* send.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = send.wav; sourceTree = "<group>"; };
+		C4A8EB252DFB947600BBD57A /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C40457842DFA413D00970945 /* Secrets */ = {
+			isa = PBXGroup;
+			children = (
+				C40457852DFA415300970945 /* APIKeys.swift */,
+			);
+			path = Secrets;
+			sourceTree = "<group>";
+		};
+		C40457872DFA417400970945 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C4A8EB252DFB947600BBD57A /* ChatService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		C49106B72DE7C2C600A13B11 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +92,8 @@
 		C49106E12DE7C3E000A13B11 /* ChatGPT */ = {
 			isa = PBXGroup;
 			children = (
+				C40457842DFA413D00970945 /* Secrets */,
+				C40457872DFA417400970945 /* Service */,
 				C49F0F052DF10B710077DE93 /* Utils */,
 				C49F0EFE2DF103940077DE93 /* Model */,
 				C49106EA2DE7C4B600A13B11 /* Chat */,
@@ -241,8 +263,10 @@
 				C49F0F042DF10A210077DE93 /* String+Extension.swift in Sources */,
 				C49F0EFA2DF0FD410077DE93 /* IncomingTableViewCell.swift in Sources */,
 				C49106E32DE7C3E000A13B11 /* SceneDelegate.swift in Sources */,
+				C4A8EB262DFB947600BBD57A /* ChatService.swift in Sources */,
 				C49F0EF72DF0FD100077DE93 /* UIColor.swift in Sources */,
 				C49F0EF82DF0FD100077DE93 /* UIFont+Extension.swift in Sources */,
+				C40457862DFA415900970945 /* APIKeys.swift in Sources */,
 				C49F0EFC2DF103280077DE93 /* OutGoingTableViewCell.swift in Sources */,
 				C49106E42DE7C3E000A13B11 /* ChatViewController.swift in Sources */,
 				C49F0F022DF103B10077DE93 /* Message.swift in Sources */,

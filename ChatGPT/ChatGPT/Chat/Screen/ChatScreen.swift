@@ -8,7 +8,11 @@
 import UIKit
 import AVFoundation
 
+
+// @MainActor 
+
 protocol ChatScreenProtocol: AnyObject {
+    @MainActor
     func didSendMessage(_ message: String)
 }
 

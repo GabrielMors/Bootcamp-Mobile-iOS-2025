@@ -9,7 +9,7 @@ import UIKit
 import AVFoundation
 
 
-// @MainActor 
+// @MainActor
 
 protocol ChatScreenProtocol: AnyObject {
     @MainActor

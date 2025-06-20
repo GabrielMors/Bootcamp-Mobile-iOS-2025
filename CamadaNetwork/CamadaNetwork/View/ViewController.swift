@@ -163,12 +163,14 @@ let bodyParametersParaPut = """
 
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchListUser()
+        //        fetchListUser()
+//        fetchUser(id: 1)
+        createUser(name: "Gabriel Mors", job: "iOS Developer")
     }
-
+    
     func fetchListUser() {
         Service.fetchListUser { result in
             switch result {
@@ -181,5 +183,27 @@ class ViewController: UIViewController {
         }
     }
     
+    func fetchUser(id: Int) {
+        Service.fetchUser(id: id) { result in
+            switch result {
+            case .success(let user):
+                print(user)
+            case .failure(let error):
+                print("Error: \(error)")
+                print(error.statusCode ?? 0)
+            }
+        }
+    }
+    
+    func createUser(name: String, job: String) {
+        Service.createUser(name: name, job: job) { result in
+            switch result {
+            case .success(let response):
+                print("User created successfully: \(response)")
+            case .failure(let error):
+                print("Error creating user: \(error.message)")
+                print(error.statusCode ?? 0)
+            }
+        }
+    }
 }
-

@@ -167,8 +167,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //        fetchListUser()
-//        fetchUser(id: 1)
-        createUser(name: "Gabriel Mors", job: "iOS Developer")
+        //        fetchUser(id: 1)
+        //        createUser(name: "Gabriel Mors", job: "iOS Developer")
+        
+//MARK: - APIClient
+        getListUserAPIClient()
+
     }
     
     func fetchListUser() {
@@ -206,4 +210,17 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    
+    func getListUserAPIClient() {
+        GlobalService.fetchListUser { result in
+            switch result {
+            case .success(let user):
+                print(user)
+            case .failure(let error):
+                print("Error: \(error)")
+            }
+        }
+    }
+    
 }

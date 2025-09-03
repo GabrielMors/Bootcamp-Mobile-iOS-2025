@@ -15,7 +15,7 @@ struct DefaultResquetBuilder: RequestBuilder {
     func buildRequest(request: APIRequest, baseURL: String, timeout: TimeInterval) -> URLRequest? {
         let completeURlString: String = baseURL + request.url
         
-        guard let url = URL(string: completeURlString) else { return nil } // verifica se é uma URL válida
+        guard let url = URL(string: completeURlString) else { return nil } 
         
         var completeRequest = URLRequest(url: url)
         completeRequest.httpMethod = request.method.rawValue

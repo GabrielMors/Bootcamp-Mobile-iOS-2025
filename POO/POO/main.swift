@@ -7,7 +7,10 @@
 
 import Foundation
 
-//MARK: Classe
+//MARK: - Classe -> Modelo de um OBJETO!
+// Atributo / Propriedades = caracteristicas de um objeto
+// Ações = função / métodos
+// CLASSE TRABALHA COM REFERENCE TYPE!!!
 
 class Casa {
     
@@ -25,6 +28,9 @@ class Casa {
         return true
     }
 }
+
+// Criando objeto!
+// Um objeto só ganha VIDA, QUANDO GERAMOS A SUA INSTANCIA QUE É O ABRE E FECHA PARENTESES ()
 
 var minhaCasa: Casa = Casa()// Objeto
 var casaPedro: Casa = Casa()// Objeto
@@ -63,6 +69,7 @@ class Carro {
 var meuCarro: Carro = Carro()
 print(meuCarro.farolAcesso)
 
+// Para alterar uma propriedade, você precisa chamar o objeto e atribuir um novo valor a propriedade
 meuCarro.farolAcesso = true
 meuCarro.cor = "Blue"
 
@@ -77,7 +84,8 @@ class Humano {
     var profissao: String
     var altura: Double
     
-    
+//MARK: Se caso NÃO TEM VALOR INICIAL, VOCÊ PRECISA PASSAR ELE NO INIT!!!!!!
+// Método Construtor -> Ele é quem seta/informa os valores iniciais!!!
     init(nome: String, peso: Double, idade: Int, profissao: String, altura: Double) {
         self.nome = nome
         self.peso = peso
@@ -91,6 +99,29 @@ class Humano {
 var felipe: Humano = Humano(nome: "Felipe", peso: 0, idade: 30, profissao: "Programador", altura: 1.80)
 var tiago: Humano = Humano(nome: "Tiago", peso: 1, idade: 10, profissao: "", altura: 1.90)
 
+
+//MARK: O mesmo se encaixa para tipagens opcionais, POIS o opcional EXISTE ALGO DE INICIO -> QUE É O NIL! Com base nisso
+//MARK: não é obrigado a passar ele no construtor. Mas caso queira, sem problemas!
+class Bolo {
+
+  var peso: Double
+  var preco: Double
+  var sabor: [String]
+  var topoDeBolo: Bool? = nil
+
+  init(peso: Double, preco: Double, sabor: [String]) {
+    self.peso = peso
+    self.preco = preco
+    self.sabor = sabor
+  }
+
+  func adicionarSabor(sabor: String) {
+    self.sabor.append(sabor)
+  }
+}
+
+var boloAniversario: Bolo = Bolo(peso: 10, preco: 200, sabor: ["Chocolate", "Baunilha"])
+var boloCasamento: Bolo = Bolo(peso: 50, preco: 2000, sabor: ["Chocolate", "Baunilha", "Maça"])
 
 //MARK: HERANÇA
 
@@ -112,7 +143,14 @@ class Animal {
 var animal: Animal = Animal()
 animal.fazerBarulho()
 
-// Encapsulamento
+// MARK: - Encapsulamento
+// O encapsulamento é a prática de manter os detalhes de implementação de um objeto escondidos e seguros de acesso externo. Isso é feito usando modificadores de acesso para restringir o acesso às propriedades e métodos de uma classe.
+// De criar variaveis/função get e set
+// get -> pegar/acessar/consultar valor
+// set -> setar novo valor/substituir o valor atual por um novo
+// Tudo que você coloca sendo private -> ele só existe dentro daquele bloco!!
+
+
 // Polimorfismo
 
 class Cachorro: Animal {

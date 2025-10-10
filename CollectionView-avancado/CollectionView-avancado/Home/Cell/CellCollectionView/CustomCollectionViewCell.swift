@@ -22,7 +22,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
-    //NÃO PODE FALTA
+    // NÃO PODE FALTA
     // Referenciamos os valores do nosso objeto para nosso elemento da célula
     public func setupCell(data: Car) {
         carImageView.image = UIImage(named: data.image)

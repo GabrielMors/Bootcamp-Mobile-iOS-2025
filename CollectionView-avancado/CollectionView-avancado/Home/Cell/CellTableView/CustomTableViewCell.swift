@@ -41,7 +41,7 @@ class CustomTableViewCell: UITableViewCell {
         // Configurando o layout da CollectionView (Direção)
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
-            layout.estimatedItemSize = .zero // Desativando a estimativa do tamanho da celula
+           // layout.estimatedItemSize = .zero // Desativando a estimativa do tamanho da celula
         }
     }
 }

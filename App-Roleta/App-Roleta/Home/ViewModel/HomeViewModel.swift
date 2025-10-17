@@ -33,7 +33,7 @@ class HomeViewModel: NSObject {
             clearPersonList() // removendo todos os objetos criado da lista
         } else  {
             delegate?.didShowAlert(title: "Uff", message: "Voce escapou dessa vez!!!!")
-            personList.remove(at: indexPath.row)
+           // personList.remove(at: indexPath.row)
         }
     }
     

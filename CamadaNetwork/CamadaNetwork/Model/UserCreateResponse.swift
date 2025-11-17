@@ -8,5 +8,7 @@
 import Foundation
 
 struct UserCreateResponse: Codable {
-    var name, job, id, createdAt: String
+    let id: Int
+    let name: String?
+    let job: String?
 }

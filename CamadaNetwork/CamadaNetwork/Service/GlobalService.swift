@@ -34,7 +34,7 @@ class GlobalService {
         
         APIClient.shared.request(request: resquest) { result in
             switch result {
-            case .success(let success):
+            case .success(let success): break
 //                completion(.success(()))
             case .failure(let failure):
                 completion(.failure(failure))

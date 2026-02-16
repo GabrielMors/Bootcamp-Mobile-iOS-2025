@@ -11,7 +11,7 @@ class ChatService {
 
     private let baseUrl: String = "https://api.openai.com" // Amarzena a URL base da API do OpenAI
     
-    //    cria uma URLSession que sempre inclui os cabeçalhos authorization e Content-Type nas requisições, facilitando o uso de APIs que exigem autenticacao e dados JSON
+    //  cria uma URLSession que sempre inclui os cabeçalhos authorization e Content-Type nas requisições, facilitando o uso de APIs que exigem autenticacao e dados JSON
     //  Cabeçalhos HTTP sao informacoes extras que enviamos junto com uma requisicao HTTP para fornecer detalhes sobre a requisicao ou cliente (nesse caso, seu app). Eles sao composto por pares chave e valor, e, ajudam o servidor entender o contexto da requisicao  e tratá-la
     
     var session: URLSession {

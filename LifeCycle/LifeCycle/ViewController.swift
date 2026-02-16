@@ -9,13 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    // Metodo quando a tela esta preste a ser apresentado
-    // Antes da view aparecer, esse metodo é chamado
-    override func viewWillAppear(_ animated: Bool) {
+    override func loadView() {
         print(#function)
-        // Configuracoes dew navegacao entre telas
-        // Timer e animacao
-//        navigationController?.navigationBar.isHidden = true
     }
     
     // Metodo quando a tela é RENDERIZADA (Ou seja, será disparado apenas 1 vez!!!!!!)
@@ -27,23 +22,39 @@ class ViewController: UIViewController {
 //        Configuracoes iniciais da view
     }
     
+    // Metodo quando a tela esta preste a ser apresentado
+    // Antes da view aparecer, esse metodo é chamado
+    override func viewWillAppear(_ animated: Bool) {
+        print(#function)
+        // Configuracoes dew navegacao entre telas
+//        Atualizar dados e interface antes de ser exibida.
+//        navigationController?.navigationBar.isHidden = true
+    }
+    
+    
     // Metodo quando a tela esta apresentado por completo
     //APARECEU PRO USUARIO
     override func viewDidAppear(_ animated: Bool) {
         print(#function)
-        // Timer e animacao
+//        Iniciar animações, chamadas de rede, timers, animacao etc.
     }
 
     // Metodo quando a tela esta preste a sair (Ou seja, antes da tela sair, esse metodo é chamado)
     override func viewWillDisappear(_ animated: Bool) {
         print(#function)
         // Timer e animacao
+//        salvar dados temporários, cancelar tarefas
     }
     
     // Metodo quando a tela desapareceu por completo
     override func viewDidDisappear(_ animated: Bool) {
         print(#function)
         // Timer e animacao
+//        Liberar recursos, remover observadores, encerrar processos.
+    }
+    
+    deinit {
+        print("ViewController foi desalocado da memória")
     }
     
     @IBAction func tappedGoButton(_ sender: UIButton) {

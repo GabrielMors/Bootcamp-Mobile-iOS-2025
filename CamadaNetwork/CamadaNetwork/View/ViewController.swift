@@ -166,12 +166,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        fetchListUser()
-        //        fetchUser(id: 1)
-        //        createUser(name: "Gabriel Mors", job: "iOS Developer")
-        
+                fetchListUser()
+                fetchUser(id: 1)
+                createUser(name: "Gabriel Mors", job: "iOS Developer")
+        updateUserParameters(name: "Gabriel Mors", job: "iOS Developer", id: 1)
+        deleteUser(id: 1)
 //MARK: - APIClient
-        getListUserAPIClient()
+//        getListUserAPIClient()
 
     }
     
@@ -211,6 +212,29 @@ class ViewController: UIViewController {
         }
     }
     
+    func updateUserParameters(name: String, job: String, id: Int) {
+      Service.updateUserParameters(name: name, job: job, id: id) { result in
+        switch result {
+        case .success(let success):
+          print(success)
+        case .failure(let failure):
+          print(failure.message)
+          print(failure.statusCode ?? 0)
+        }
+      }
+    }
+    
+    func deleteUser(id: Int) {
+        Service.deleteUser(id: id) { result in
+            switch result {
+            case .success(let success):
+                print(success)
+            case .failure(let failure):
+                print(failure.message)
+                print(failure.statusCode ?? 0)
+            }
+        }
+    }
     
     func getListUserAPIClient() {
         GlobalService.fetchListUser { result in
